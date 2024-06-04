@@ -35,6 +35,9 @@ import piexif.helper
 from contextlib import closing
 
 
+logging.basicConfig(level=logging.ERROR)
+
+
 def script_name_to_index(name, scripts):
     try:
         return [script.title().lower() for script in scripts].index(name.lower())
