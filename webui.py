@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 import time
-
+import logging
 from modules import timer
 from modules import initialize_util
 from modules import initialize
@@ -26,6 +26,7 @@ def create_api(app):
 def api_only():
     from fastapi import FastAPI
     from modules.shared_cmd_options import cmd_opts
+    logging.basicConfig(level=logging.ERROR)
 
     initialize.initialize()
 

@@ -35,8 +35,6 @@ import piexif.helper
 from contextlib import closing
 
 
-logging.basicConfig(level=logging.ERROR)
-
 
 def script_name_to_index(name, scripts):
     try:
@@ -216,6 +214,7 @@ class Api:
 
         self.router = APIRouter()
         self.app = app
+        logging.basicConfig(level=logging.ERROR)
         self.queue_lock = queue_lock
         api_middleware(self.app)
         self.add_api_route("/sdapi/v1/txt2img", self.text2imgapi, methods=["POST"], response_model=models.TextToImageResponse)

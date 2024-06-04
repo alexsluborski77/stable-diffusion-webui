@@ -1,5 +1,5 @@
 from modules import launch_utils
-
+import logging
 args = launch_utils.args
 python = launch_utils.python
 git = launch_utils.git
@@ -25,6 +25,7 @@ start = launch_utils.start
 
 
 def main():
+    logging.basicConfig(level=logging.ERROR)
     if args.dump_sysinfo:
         filename = launch_utils.dump_sysinfo()
 
